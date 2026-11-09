@@ -1,6 +1,3 @@
-# dfir-compromised-host-analysis
-A Digital Forensics and Incident Response (DFIR) case study focused on identifying attacker persistence mechanisms, unauthorized administrative privileges, and malicious scheduled tasks within a compromised Windows environment
-
 
 
 
@@ -46,6 +43,8 @@ A highly suspicious, non-standard scheduled background maintenance task was disc
 
 While named to look like an innocent background maintenance script, it was flag-marked to run automatically every single day without user interaction.
 
+![Scheduled Task Discovery](screenshots/Scheduled_tasks.png)
+
 ---
 
 ### 3. Artifact & Technical Malicious Code Extraction
@@ -55,7 +54,7 @@ By drilling deeper into the properties of the discovered task and checking its d
 The task properties confirmed that it was built explicitly to execute an external standalone script file located deep within a temporary directory path:
 * **`C:\TMP\nc.ps1`**
 
-![Scheduled Task Analysis](screenshots/Scheduled_tasks.png)
+![Malicious Script Analysis](screenshots/Malicious_script.png)
 
 ---
 
@@ -67,7 +66,7 @@ Inspecting the execution arguments directly within the Task Scheduler Actions pa
 * **Runtime Command:** `C:\TMP\nc.ps1 -l 1348`
 * **Target Listening Port:** **`1348`** (The `-l` argument flags a persistent listener, effectively serving as an active entry point waiting for a command-and-control connection).
 
-![Malicious Artifact and Network Configuration](screenshots/Malicious_script.png)
+![Network Port Configuration](screenshots/Malicious_script.png)
 
 ---
 
@@ -84,9 +83,8 @@ Inspecting the execution arguments directly within the Task Scheduler Actions pa
 ---
 
 ## Conclusion & Remediation Guidance
-Based on the evidence uncovered during this DFIR investigation, the following immediate remediation steps are recommended:
+Based on the evidence network uncovered during this DFIR investigation, the following immediate remediation steps are recommended:
 1. **Revoke Privileges:** Immediately remove the `Jenny` and `Guest` accounts from the Local Administrators group and disable the profiles.
 2. **Eliminate Persistence:** Terminate and delete the rogue `Clean file system` scheduled task from the system configuration.
 3. **Purge Artifacts:** Securely delete the malicious directory structure and script files located at `C:\TMP\nc.ps1`.
 4. **Network Hardening:** Implement firewall blocking rules to drop traffic targeting port `1348` and run network sweeps to look for active outgoing beacons.
-
