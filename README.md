@@ -54,7 +54,7 @@ By drilling deeper into the properties of the discovered task and checking its d
 The task properties confirmed that it was built explicitly to execute an external standalone script file located deep within a temporary directory path:
 * **`C:\TMP\nc.ps1`**
 
-![Malicious Script Analysis](screenshots/Malicious_script.jpg)
+![Malicious Script Analysis](screenshots/Malicious_script.jpg) 
 
 ---
 
