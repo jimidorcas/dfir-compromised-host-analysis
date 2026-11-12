@@ -60,9 +60,11 @@ Auditing a second suspicious scheduled task named **`Clean file system`** (disgu
 The task properties confirmed that it was built explicitly to execute an external standalone script file hidden inside a temporary directory path:
 * **`C:\TMP\nc.ps1`**
 
-![Malicious Script Analysis](screenshots/Malicious_script2.jpg) 
+![Malicious Script Analysis](screenshots/Malicious_script.jpg) 
 
-[Malicious Script Analysis](screenshots/Malicious_script.jpg) 
+[Malicious Script Analysis](screenshots/Malicious_script2.jpg) 
+
+
 
 
 
