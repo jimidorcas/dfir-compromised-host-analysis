@@ -76,7 +76,7 @@ Inspecting the execution arguments directly within the Task Scheduler Actions pa
 * **Runtime Command:** `C:\TMP\nc.ps1 -l 1348`
 * **Target Listening Port:** **`1348`** (The `-l` argument flags a persistent listener, effectively serving as an active entry point waiting for a command-and-control connection).
 
-![Network Port Configuration](screenshots/Malicious_script.png)
+![Network Port Configuration](screenshots/Malicious_script2.jpg)
 
 ---
 
