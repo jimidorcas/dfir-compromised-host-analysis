@@ -30,7 +30,8 @@ The query revealed that two unauthorized accounts had been granted full administ
 * **Jenny**
 * **Guest** (An elevated default account that should strictly remain disabled/unprivileged)
 
-![Administrative Accounts Audit](screenshots/Admin_group.png)
+![Administrative Accounts Audit](screenshots/Admin_group.jpg
+)
 
 ---
 
