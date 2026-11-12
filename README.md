@@ -39,10 +39,12 @@ The query revealed that two unauthorized accounts had been granted full administ
 To ensure their access survived system restarts, the attacker established a persistent backdoor configuration. The system's automated operational triggers were audited using the **Windows Task Scheduler Utility**.
 
 #### Findings:
-A highly suspicious, non-standard scheduled background maintenance task was discovered under the name:
-* **`Clean file system`**
-
-While named to look like an innocent background maintenance script, it was flag-marked to run automatically every single day without user interaction.
+A highly suspicious, non-standard scheduled task was discovered under the name:
+* **`falshupdate22`**
+  
+Key forensic indicators identified on this task include:
+* **Masquerading (Typo-squatting):** The task uses a deliberate misspelling of "Flash" (`falshupdate22`) to disguise itself as a legitimate Adobe Flash software update.
+* **Aggressive Trigger Schedule:** Configured to trigger repeatedly every **2 minutes indefinitely** (`At 4:49 PM on 3/2/2019 - After triggered, repeat every 00:02:00 indefinitely`) under the `Administrator` account.
 
 [Scheduled Task Discovery](screenshots/Scheduled_tasks2.jpg)
 
