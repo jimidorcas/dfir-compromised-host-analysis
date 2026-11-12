@@ -44,7 +44,7 @@ A highly suspicious, non-standard scheduled background maintenance task was disc
 
 While named to look like an innocent background maintenance script, it was flag-marked to run automatically every single day without user interaction.
 
-![Scheduled Task Discovery](screenshots/Scheduled_tasks.png)
+[Scheduled Task Discovery](screenshots/Scheduled_tasks.jpg)
 
 ---
 
