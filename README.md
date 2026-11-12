@@ -54,13 +54,15 @@ Key forensic indicators identified on this task include:
 ---
 
 ### 3. Artifact & Technical Malicious Code Extraction
-By drilling deeper into the properties of the discovered task and checking its designated runtime actions, the underlying malicious script was exposed.
+Auditing a second suspicious scheduled task named **`Clean file system`** (disguised as a routine daily maintenance task) and checking its designated runtime actions exposed the primary malicious payload.
 
 #### Findings:
-The task properties confirmed that it was built explicitly to execute an external standalone script file located deep within a temporary directory path:
+The task properties confirmed that it was built explicitly to execute an external standalone script file hidden inside a temporary directory path:
 * **`C:\TMP\nc.ps1`**
 
 [Malicious Script Analysis](screenshots/Malicious_script.jpg) 
+
+![Malicious Script Analysis](screenshots/Malicious_script2.jpg) 
 
 ---
 
